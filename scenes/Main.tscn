@@ -26,6 +26,7 @@ albedo_texture = ExtResource( 2 )
 [node name="Level" type="Spatial" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="Level"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55309, 0.0774312, 0.937702 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
@@ -55,7 +56,7 @@ material/0 = SubResource( 5 )
 shape = SubResource( 6 )
 
 [node name="Cube3" type="MeshInstance" parent="Level"]
-transform = Transform( 3.45337, 0.504618, 0, -2.01848, 0.863343, 0, 0, 0, 1, -0.469851, 0.00801742, 3.45572 )
+transform = Transform( 3.45337, 0.504618, 0, -2.01847, 0.863339, 0.0029147, 0.00588326, -0.00251638, 0.999996, -0.469851, 0.00801742, 3.45572 )
 mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
 
@@ -65,7 +66,7 @@ material/0 = SubResource( 5 )
 shape = SubResource( 6 )
 
 [node name="Player" parent="Level" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94146, 3.40646 )
+transform = Transform( -0.999982, -0.00592232, 0.000998205, -0.00592278, 0.999982, -0.000460301, -0.00099546, -0.000466211, -0.999999, 0, 0.94146, 3.40646 )
 
 [node name="Camera" type="Camera" parent="Level"]
-transform = Transform( 1, 0, 0, 0, 0.882751, 0.469841, 0, -0.469841, 0.882751, -7.15256e-07, 13.0337, 15.6377 )
+transform = Transform( 1, 0, 0, 0, 0.938373, 0.345625, 0, -0.345625, 0.938373, -2.06868, 5.9946, 15.4084 )

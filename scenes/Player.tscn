@@ -13,10 +13,13 @@ size = Vector3( 1, 0.6, 1 )
 
 [sub_resource type="ShaderMaterial" id=4]
 
-[sub_resource type="BoxShape" id=5]
-extents = Vector3( 2, 1, 1 )
+[sub_resource type="CapsuleShape" id=5]
+margin = 0.031
+radius = 1.01
+height = 2.99
 
 [node name="Player" type="KinematicBody"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
 script = ExtResource( 1 )
 
 [node name="Pivot" type="Spatial" parent="."]
@@ -32,5 +35,5 @@ mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( -4.37114e-08, 4.37114e-08, -1, 1, 1.91069e-15, -4.37114e-08, 0, -1, -4.37114e-08, 0, 1.76465, 0 )
+transform = Transform( -0.994, 1.50996e-07, -6.60024e-15, 0, -4.37114e-08, -1, -1.5009e-07, -1, 4.37114e-08, 0, 2.01426, 0 )
 shape = SubResource( 5 )
