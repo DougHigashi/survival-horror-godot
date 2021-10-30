@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://data/textures/Floor Tiles Prototype/Dark/texture_01.png" type="Texture" id=1]
 [ext_resource path="res://data/textures/Floor Tiles Prototype/Purple/texture_13.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 100, 0.5, 100 )
@@ -15,10 +16,10 @@ extents = Vector3( 50, 0.5, 50 )
 
 [sub_resource type="CubeMesh" id=4]
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 2 )
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=6]
 
 [node name="Main" type="Spatial"]
 
@@ -36,32 +37,35 @@ shape = SubResource( 3 )
 [node name="Cube" type="MeshInstance" parent="Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30805, 0 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
+material/0 = SubResource( 5 )
 
 [node name="StaticBody" type="StaticBody" parent="Level/Cube"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Cube/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Cube2" type="MeshInstance" parent="Level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.88657, 1.30805, 0 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
+material/0 = SubResource( 5 )
 
 [node name="StaticBody" type="StaticBody" parent="Level/Cube2"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Cube2/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Cube3" type="MeshInstance" parent="Level"]
-transform = Transform( 3.85812, 0.263974, 0, -1.0559, 0.96453, 0, 0, 0, 1, -0.469851, 0.00801742, 3.45572 )
+transform = Transform( 3.45337, 0.504618, 0, -2.01848, 0.863343, 0, 0, 0, 1, -0.469851, 0.00801742, 3.45572 )
 mesh = SubResource( 4 )
-material/0 = SubResource( 6 )
+material/0 = SubResource( 5 )
 
 [node name="StaticBody" type="StaticBody" parent="Level/Cube3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Level/Cube3/StaticBody"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
+
+[node name="Player" parent="Level" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94146, 3.40646 )
 
 [node name="Camera" type="Camera" parent="Level"]
-transform = Transform( 1, 0, 0, 0, 0.969488, 0.245138, 0, -0.245138, 0.969488, 0, 4.72331, 8.64608 )
+transform = Transform( 1, 0, 0, 0, 0.882751, 0.469841, 0, -0.469841, 0.882751, -7.15256e-07, 13.0337, 15.6377 )
