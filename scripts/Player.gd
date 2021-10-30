@@ -1,44 +1,34 @@
 extends KinematicBody
 
-
-export var speed := 6
-export var running_speed := 12
-export var gravity := -30
-export var jump_impulse := 25
-
+export var rotate_speed := 0.1
 var velocity = Vector3.ZERO
 
 onready var pivot := $Pivot
-
-func _ready():
-	var player := $Pivot/MeshInstance
-	player.global_transform.origin
-	
+onready var player := $Player
 
 
 func _physics_process(delta):
-	var input_vector = get_input_Vector()
-	apply_movement(input_vector)
-	apply_gravity(delta)
-	#velocity = move_and_collide(velocity)
-	velocity = move_and_slide_with_snap(velocity, Vector3.UP, Vector3.UP, true)
+	var rotation_vector = get_rotation_vector()
+	rotate_player(rotation_vector)
 	
-
+	var vec = Vector3.ZERO
+	vec.y = Input.get_action_strength("rotate_r") - Input.get_action_strength("rotate_l")
+	print(vec)
+	
+	
 func get_input_Vector():
 	var input_vector = Vector3.ZERO
-	input_vector.x = Input.get_action_strength("move_r") - Input.get_action_strength("move_l")
+	input_vector.y = Input.get_action_strength("rotate_r") - Input.get_action_strength("rotate_l")
 	input_vector.z = Input.get_action_strength("move_bw") - Input.get_action_strength("move_fw")
-
-	return input_vector.normalized()
-
-func apply_movement(input_vector):
-
-	velocity.x = input_vector.x * speed
-	velocity.z = input_vector.z * speed
 	
-	if(input_vector != Vector3.ZERO):
-		pivot.look_at(translation + input_vector, Vector3.UP)
+func get_rotation_vector():
+	var rotation_vector = Vector3.ZERO
+	rotation_vector.y = Input.get_action_strength("rotate_l") - Input.get_action_strength("rotate_r")
+	
+	return rotation_vector.normalized()
+
+func rotate_player(rotation_vector):
+	if(rotation_vector != Vector3.ZERO):
+		pivot.rotate(rotation_vector, rotate_speed)
 
 
-func apply_gravity(delta):
-	velocity.y += gravity * delta
