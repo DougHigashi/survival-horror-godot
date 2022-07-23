@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/texture_12.png-9713044144f21c699fd3a701d549e564.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://textures/Floor Tiles Prototype/Orange/texture_12.png"
+dest_files=[ "res://.import/texture_12.png-9713044144f21c699fd3a701d549e564.stex" ]
 
 [params]
 

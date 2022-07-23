@@ -34,9 +34,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4746, -0.831848 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
-[node name="Camera" type="Camera" parent="Pivot"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.61385e-08, 1.29632, -1.0997 )
-
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( -0.994, 1.50996e-07, -6.60024e-15, 0, -4.37114e-08, -1, -1.5009e-07, -1, 4.37114e-08, 0, 2.01426, 0 )
 shape = SubResource( 5 )

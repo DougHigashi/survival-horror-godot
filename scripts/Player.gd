@@ -1,8 +1,8 @@
 extends KinematicBody
 
 export var speed := 6
-export var rotate_speed := 0.1
-export var gravity := -100
+export var rotate_speed := 0.05
+export var gravity := -300
 var rot_dir = 0
 
 var velocity = Vector3()
@@ -12,7 +12,6 @@ onready var player := $Player
 
 
 func _physics_process(delta):
-	rotate_speed = 0.1
 	rotate_player(get_rotation_vector())
 	move_player(get_input_vector())
 	apply_gravity(delta)
